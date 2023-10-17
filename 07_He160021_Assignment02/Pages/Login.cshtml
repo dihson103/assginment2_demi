@@ -1,0 +1,21 @@
+﻿@page
+@model _07_He160021_Assignment02.Pages.LoginModel
+@{
+}
+
+
+<div class="container">
+    <form method="post">
+  <div class="form-group mb-3">
+    <label asp-for="AuthenticateRequest.Username"></label>
+    <input type="text" class="form-control" asp-for="AuthenticateRequest.Username" placeholder="Enter usernmae">
+    <span asp-validation-for="AuthenticateRequest.Username" class="text-danger"></span>
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="AuthenticateRequest.Password"></label>
+    <input type="password" class="form-control" asp-for="AuthenticateRequest.Password" placeholder="Password">
+     <span asp-validation-for="AuthenticateRequest.Password" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>

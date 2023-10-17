@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Pizza menu</h1>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-sm mt-5">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="@product.ProductImage" alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title">@product.ProductName</h5>
+                        <p class="card-text text-danger">$ @product.UnitPrice</p>
+                        <a href="#" class="btn btn-primary">Add to card</a>
+                        <a asp-page="./Products/Details" asp-route-id="@product.ProductId" class="btn btn-danger">View details</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+
